@@ -1,9 +1,9 @@
 import "./App.css";
-import GarageSection from "./GarageSection";
-import Navbar from "./Navbar";
+import GarageSection from "../GarageSection/GarageSection";
+import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GarageDetails from "./GarageDetails";
-import Design from "./Design";
+import GarageDetails from "../GarageDetails/GarageDetails";
+import Design from "../Design/Design";
 
 
 function App() {

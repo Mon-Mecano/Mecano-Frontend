@@ -1,25 +1,26 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import axios from "./Axios";
+import axios from "../Axios/Axios";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const GarageDetails = () => {
   const params = useParams();
   const id = params.id;
   const [garage, setGarage] = useState({});
-  const [pouzani,setPouzani] = useState([{
-    url: ``
-  }],);
+  const [photo, setPhoto] = useState([{
+    url : ""
+  },]);
   useEffect(() => {
     getGarage();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+  }, []);
   const getGarage = async () => {
     try {
       const response = await axios.get(`/garage/details/${id}/`);
       setGarage(response.data);
-      await setPouzani([{
-        url : `https://immense-tor-96559.herokuapp.com${response.data.garage_pictures[0].picture}`
+      setPhoto([{
+        url: `https://immense-tor-96559.herokuapp.com${response.data.garage_pictures[0].picture}`,
+      },{
+        url : ""
       }]);
     } catch (error) {
       console.log(error);
@@ -32,7 +33,6 @@ const GarageDetails = () => {
         <div className="my-4">
           <div>
             <h1 className="font-mono font-bold text-2xl">Garage Name</h1>
-            <h1 className="font-mono font-light text-lg">{garage.garage_pictures && garage.garage_pictures[0].picture}</h1>
           </div>
           <div className="flex justify-between items-center">
             <div>
@@ -51,9 +51,7 @@ const GarageDetails = () => {
           <SimpleImageSlider
             width={896}
             height={504}
-            images={[{
-        url : `https://immense-tor-96559.herokuapp.com${garage.garage_pictures[0].picture}`
-      }]}
+            images={photo}
             showBullets={true}
             showNavs={true}
           />

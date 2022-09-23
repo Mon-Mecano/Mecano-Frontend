@@ -1,4 +1,4 @@
-import garage from "./images/garage.jpg";
+import garage from "../../assets/images/garage.jpg";
 import SimpleImageSlider from "react-simple-image-slider";
 
 const images = [

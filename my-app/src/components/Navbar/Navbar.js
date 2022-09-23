@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 import Modal from "react-modal";
-import axios from "./Axios";
-import { Link } from "react-router-dom";
+import axios from "../Axios/Axios";
 
 const customStyles = {
   content: {

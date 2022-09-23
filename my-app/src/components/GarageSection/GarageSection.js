@@ -1,6 +1,6 @@
 import { BsFilterRight, BsSortDown } from "react-icons/bs";
 import { useState, useEffect } from "react";
-import axios from "./Axios";
+import axios from "../Axios/Axios";
 
 const GarageSection = () => {
   const [garage, setgarage] = useState([]);
@@ -9,7 +9,7 @@ const GarageSection = () => {
   }, []);
   const getGarage = async () => {
     try {
-      const response = await axios.get("/garage/list");
+      const response = await axios.get("/garage/list/");
       setgarage(response.data);
     } catch (error) {
       console.log(error);
