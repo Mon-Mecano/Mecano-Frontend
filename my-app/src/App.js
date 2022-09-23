@@ -1,15 +1,23 @@
+import "./App.css";
+import GarageSection from "./GarageSection";
+import Navbar from "./Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GarageDetails from "./GarageDetails";
+import Design from "./Design";
 
-import './App.css';
-import GarageSection from './GarageCard';
-import Modalh from './ModelTest';
-import Navbar from './Navbar';
 
 function App() {
   return (
-    <div className="">
-      <Navbar />
-      <GarageSection/>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<GarageSection />} />
+          <Route path ="/garage/:id" element={<GarageDetails />} />
+          <Route path ="/test" element={<Design />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
