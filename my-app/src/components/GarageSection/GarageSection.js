@@ -17,7 +17,7 @@ const GarageSection = () => {
   };
   return (
     <div>
-      <div className="container flex justify-between items-center mx-auto mt-8">
+      <div className="container flex justify-between items-center mx-auto mt-8 w-3/4">
         <button className="text-4xl">
           <BsSortDown />
         </button>
@@ -25,7 +25,7 @@ const GarageSection = () => {
           <BsFilterRight />
         </button>
       </div>
-      <section className="grid gap-40 grid-cols-[repeat(auto-fit,minmax(390px,1fr))] mx-44 mt-10">
+      <section className="grid gap-14 grid-cols-[repeat(auto-fit,minmax(390px,1fr))] mx-44 mt-10">
         {garage.map((garage) => (
           <GarageCard
             key={garage.id}
