@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GarageDetails from "../GarageDetails/GarageDetails";
 import Design from "../Design/Design";
+import Reservation from "../Reservation/Reservation";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<GarageSection />} />
           <Route path ="/garage/:id" element={<GarageDetails />} />
           <Route path ="/test" element={<Design />} />
+          <Route path ="/reservation/:id" element={<Reservation />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -117,6 +117,7 @@ const Navbar = () => {
                 value={userEmail}
                 placeholder="Entrez votre e-mail"
                 size={50}
+                required
               />
               <br></br>
               <input
@@ -127,6 +128,7 @@ const Navbar = () => {
                 value={userPassword}
                 placeholder="Entrez votre mot de passe"
                 size={50}
+                required
               />
               <br></br>
               <div class="flex items-center">
