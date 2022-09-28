@@ -35,7 +35,7 @@ const Reservation = () => {
           <p className="font-mono text-lg text-gray-400">
             Le 10 Octobre a 17h-17h20<br></br>
             20 min<br></br>
-            Le garage ferme a 18h !
+            <p className="text-red-500"> Le garage ferme a 18h !</p>
           </p>
           <a href="#" className="font-mono text-sm underline">
             Changer
@@ -68,9 +68,9 @@ const Reservation = () => {
           <h1>70$</h1>
         </div>
         <div className="w-3/4 mx-auto mt-20">
-        <button className="float-right bg-green-700 text-white font-mono font-bold text-lg hover:bg-green-600 transition-all ease-linear py-5 px-10 rounded-xl">
+          <button className="float-right bg-green-700 text-white font-mono font-bold text-lg hover:bg-green-600 transition-all ease-linear py-5 px-10 rounded-xl">
             Payer
-        </button>
+          </button>
         </div>
       </div>
     </div>

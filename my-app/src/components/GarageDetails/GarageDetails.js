@@ -70,7 +70,7 @@ const GarageDetails = () => {
       </div>
       <div className="container mx-auto w-3/4 my-10">
         <a
-          href="#"
+          href={`/reservation/${id}`}
           className="font-sans text-white text-lg font-bold bg-green-700 hover:bg-green-600 px-10 py-5 mt-8 rounded-xl transition-all ease-linear shadow-lg"
         >
           Reserver
