@@ -1,6 +1,5 @@
 import "./App.css";
 import GarageSection from "../GarageSection/GarageSection";
-import Navbar from "../Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GarageDetails from "../GarageDetails/GarageDetails";
 import Design from "../Design/Design";
@@ -12,13 +11,13 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<GarageSection />} />
+          <Route path="/shop" element={<GarageSection />} />
           <Route path="/garage/:id" element={<GarageDetails />} />
           <Route path="/test" element={<Design />} />
           <Route path="/reservation/:id" element={<Reservation />} />
         </Routes>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
