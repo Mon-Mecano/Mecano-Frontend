@@ -65,7 +65,7 @@ const Navbar = () => {
       <nav className="bg-white border-b border-gray-300">
         <div className="container flex justify-between items-center mx-auto w-3/4">
           <a href="/" className="sm:hidden lg:flex items-center">
-            <span className="self-center font-sans text-[28px]">
+            <span className="self-center font-sans text-3xl">
               Mon Mecano
             </span>
           </a>

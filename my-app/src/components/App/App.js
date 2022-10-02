@@ -5,18 +5,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GarageDetails from "../GarageDetails/GarageDetails";
 import Design from "../Design/Design";
 import Reservation from "../Reservation/Reservation";
-
+import Home from "../Home/Home";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
         <Routes>
           <Route path="/" element={<GarageSection />} />
-          <Route path ="/garage/:id" element={<GarageDetails />} />
-          <Route path ="/test" element={<Design />} />
-          <Route path ="/reservation/:id" element={<Reservation />} />
+          <Route path="/garage/:id" element={<GarageDetails />} />
+          <Route path="/test" element={<Design />} />
+          <Route path="/reservation/:id" element={<Reservation />} />
+        </Routes>
+        <Routes>
+          <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>

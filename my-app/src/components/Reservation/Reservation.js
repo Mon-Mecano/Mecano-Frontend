@@ -1,10 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 const Reservation = () => {
   const params = useParams();
   const id = params.id;
   return (
+    <>
+    <Navbar />
     <div className="w-3/4 mx-auto">
       <h1 className="text-center mt-4 text-2xl font-mono font-bold">
         Finaliser la reservation
@@ -74,6 +77,7 @@ const Reservation = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "../Axios/Axios";
 import SimpleImageSlider from "react-simple-image-slider";
 import {AiFillStar} from "react-icons/ai";
+import Navbar from "../Navbar/Navbar";
 
 const GarageDetails = () => {
   const params = useParams();
@@ -29,6 +30,8 @@ const GarageDetails = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div>
       <div className="container mx-auto w-3/4">
         <div className="my-4">
@@ -77,6 +80,7 @@ const GarageDetails = () => {
         </a>
       </div>
     </div>
+    </>
   );
 };
 

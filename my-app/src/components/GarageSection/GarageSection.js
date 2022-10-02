@@ -1,6 +1,7 @@
 import { BsFilterRight, BsSortDown } from "react-icons/bs";
 import { useState, useEffect } from "react";
 import axios from "../Axios/Axios";
+import Navbar from "../Navbar/Navbar";
 
 const GarageSection = () => {
   const [garage, setgarage] = useState([]);
@@ -16,30 +17,33 @@ const GarageSection = () => {
     }
   };
   return (
-    <div>
-      <div className="container flex justify-between items-center mx-auto mt-8 w-3/4">
-        <button className="text-4xl">
-          <BsSortDown />
-        </button>
-        <button className="text-4xl">
-          <BsFilterRight />
-        </button>
+    <>
+    <Navbar />
+      <div>
+        <div className="container flex justify-between items-center mx-auto mt-8 w-3/4">
+          <button className="text-4xl">
+            <BsSortDown />
+          </button>
+          <button className="text-4xl">
+            <BsFilterRight />
+          </button>
+        </div>
+        <section className="grid gap-14 grid-cols-[repeat(auto-fit,minmax(390px,1fr))] mx-44 mt-10">
+          {garage.map((garage) => (
+            <GarageCard
+              key={garage.id}
+              id={garage.id}
+              image={`https://immense-tor-96559.herokuapp.com${garage.garage_pictures[0].picture}`}
+              userImageAlt={`garage ${garage.garage_name}`}
+              garageName={garage.garage_name}
+              location={garage.address}
+              distance="20 Km"
+              price="20"
+            />
+          ))}
+        </section>
       </div>
-      <section className="grid gap-14 grid-cols-[repeat(auto-fit,minmax(390px,1fr))] mx-44 mt-10">
-        {garage.map((garage) => (
-          <GarageCard
-            key={garage.id}
-            id={garage.id}
-            image={`https://immense-tor-96559.herokuapp.com${garage.garage_pictures[0].picture}`}
-            userImageAlt={`garage ${garage.garage_name}`}
-            garageName={garage.garage_name}
-            location={garage.address}
-            distance="20 Km"
-            price="20"
-          />
-        ))}
-      </section>
-    </div>
+    </>
   );
 };
 
