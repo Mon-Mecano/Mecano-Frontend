@@ -64,7 +64,7 @@ const NavbarHome = () => {
     <>
       <nav className="bg-green-700">
         <div className="container flex justify-between items-center mx-auto w-3/4">
-          <a href="/home">
+          <a href="/">
             <span className="font-sans text-white text-3xl">Mon Mecano</span>
           </a>
           <div className="my-4">
@@ -115,7 +115,7 @@ const NavbarHome = () => {
           </div>
           <div className="flex my-10">
             <a
-              href="/"
+              href="/mecano/customer"
               className=" p-2 px-5 rounded-lg font-sans font-semibold bg-green-600 text-white hover:bg-gray-100 hover:text-black transition-all ease-linear w-full"
             >
               Enregistre ton garage

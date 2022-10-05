@@ -81,7 +81,7 @@ const Navbar = () => {
             </button>
           </div>
           <div className="flex my-10">
-          <a href="/" className="bg-gray-100 p-2 px-5 rounded-lg font-sans font-semibold hover:bg-green-700 hover:text-white transition-all ease-linear w-full">
+          <a href="/mecano/customer" className="bg-gray-100 p-2 px-5 rounded-lg font-sans font-semibold hover:bg-green-700 hover:text-white transition-all ease-linear w-full">
             Enregistre ton garage
           </a>
             <button
