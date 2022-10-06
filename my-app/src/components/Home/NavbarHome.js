@@ -1,6 +1,6 @@
 
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
-import Modal from "react-modal";
+
 
 
 const NavbarHome = () => {
