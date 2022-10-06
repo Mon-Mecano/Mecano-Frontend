@@ -19,7 +19,6 @@ function App() {
           <Route path="/garage/:id" element={<GarageDetails />} />
           <Route path="/test" element={<Design />} />
           <Route path="/reservation/:id" element={<Reservation />} />
-          <Route path="/mecano" element={<MecanoCustomer/>} />
           <Route path="/mecano/customer" element={<MecanoCustomer />} />
           <Route path="/mecano/order" element={<MecanoOrder />} />
           <Route path="/mecano/Sales" element={<MecanoSales />} />
