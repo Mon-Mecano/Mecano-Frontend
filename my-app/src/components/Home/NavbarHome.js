@@ -1,6 +1,6 @@
 
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
-
+import data from "../Data/data.json";
 
 
 const NavbarHome = () => {
@@ -14,12 +14,15 @@ const NavbarHome = () => {
           </a>
           <div className="my-4">
             <div className="flex justify-center">
-              <input
+              <input list="services"
                 className="flex p-2 my-4 px-20 text-gray-900 bg-gray-50 placeholder:font-mono placeholder:text-sm rounded-lg focus:outline-none"
                 type="text"
                 name="search"
                 placeholder="Trouvez votre Mecano"
               />
+              <datalist id="services">
+              {data.services.map((service)=>{return <option value={service}/>})}
+            </datalist>
             </div>
             <div className="flex justify-center w-full">
               <input

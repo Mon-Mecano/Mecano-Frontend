@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 import Modal from "react-modal";
 import axios from "../Axios/Axios";
+import data from "../Data/data.json";
 
 const customStyles = {
   content: {
@@ -71,11 +72,15 @@ const Navbar = () => {
           </a>
           <div className="flex my-10 shadow-lg transition-all ease-linear">
             <input
+              list='services'
               type="text"
               name="search"
               className="block p-2 px-20 text-gray-900 bg-gray-50 placeholder:font-mono rounded-l-lg focus:outline-none"
               placeholder="Trouvez votre mecano..."
             ></input>
+            <datalist id="services">
+              {data.services.map((service)=>{return <option value={service}/>})}
+            </datalist>
             <button className="bg-green-700 text-white px-4 text-lg rounded-r-lg">
               <AiOutlineSearch />
             </button>
