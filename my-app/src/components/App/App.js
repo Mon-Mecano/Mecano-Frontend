@@ -8,6 +8,10 @@ import Home from "../Home/Home";
 import MecanoCustomer from "../Mecano/MecanoCustomer";
 import MecanoOrder from "../Mecano/MecanoOrder";
 import MecanoSales from "../Mecano/MecanoSales";
+import Years from "../Search/Years";
+import Makes from "../Search/Makes";
+import Models from "../Search/Models";
+import Login from "../Search/Login";
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
           <Route path="/mecano/customer" element={<MecanoCustomer />} />
           <Route path="/mecano/order" element={<MecanoOrder />} />
           <Route path="/mecano/Sales" element={<MecanoSales />} />
+          <Route path="/search" element={<Years />} />
+          <Route path="/search/:year" element={<Makes />} />
+          <Route path="/search/:year/:make" element={<Models />} />
+          <Route path="/search/:year/:make/:model/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

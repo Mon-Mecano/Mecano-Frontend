@@ -8,5 +8,5 @@ module.exports = {
       'mono': ['Quicksand', 'monospace']
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }

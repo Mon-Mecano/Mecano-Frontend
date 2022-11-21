@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
 import Modal from "react-modal";
 import axios from "../Axios/Axios";
-import data from "../Data/data.json";
+import data from "../../assets/data/services.json";;
 
 const customStyles = {
   content: {
@@ -64,33 +64,50 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white border-b border-gray-300">
-        <div className="container flex justify-between items-center mx-auto w-3/4">
-          <a href="/" className="sm:hidden lg:flex items-center">
+        <div className="flex justify-between items-center w-full">
+          <a href="/" className="sm:hidden lg:flex items-center ml-40">
             <span className="self-center font-sans text-3xl">
               Mon Mecano
             </span>
           </a>
-          <div className="flex my-10 shadow-lg transition-all ease-linear">
-            <input
-              list='services'
-              type="text"
-              name="search"
-              className="block p-2 px-20 text-gray-900 bg-gray-50 placeholder:font-mono rounded-l-lg focus:outline-none"
-              placeholder="Trouvez votre mecano..."
-            ></input>
-            <datalist id="services">
-              {data.services.map((service)=>{return <option value={service}/>})}
-            </datalist>
-            <button className="bg-green-700 text-white px-4 text-lg rounded-r-lg">
-              <AiOutlineSearch />
-            </button>
+          <div className="my-4">
+          <div className="flex justify-center">
+              <input
+                list="services"
+                className="flex p-2 w-full  text-gray-900 bg-gray-50 placeholder:font-mono placeholder:text-sm rounded-lg focus:outline-none shadow-lg"
+                type="text"
+                name="search"
+                placeholder="Choisir service ou decrire votre probleme"
+              />
+              <datalist id="services">
+                {data.services.map((service) => {
+                  return <option value={service} />;
+                })}
+              </datalist>
+            </div>
+            <div className="flex justify-center my-4 ">
+              <input
+                className="flex p-2 text-gray-900 bg-gray-50 mr-4 placeholder:font-mono rounded-lg placeholder:text-sm focus:outline-none w-1/2 shadow-lg"
+                type="text"
+                name="search"
+                placeholder="Code postal"
+              />
+              <button
+                className="p-2 text-white text-xl  font-bold bg-green-700 placeholder:font-mono rounded-lg placeholder:text-sm focus:outline-none w-1/2 shadow-lg"
+                name="search"
+                id="search"
+              >
+                {" "}
+                <AiOutlineSearch />
+              </button>
+            </div>
           </div>
-          <div className="flex my-10">
+          <div className="flex mb-32 mr-4 mt-4">
           <a href="/mecano/customer" className="bg-gray-100 p-2 px-5 rounded-lg font-sans font-semibold hover:bg-green-700 hover:text-white transition-all ease-linear w-full">
             Enregistre ton garage
           </a>
             <button
-              className="bg-gray-100 p-2 px-3 ml-2 rounded-3xl font-sans  hover:bg-gray-300 transition-all ease-linear "
+              className="bg-gray-100 p-2 px-3 ml-2 rounded-3xl font-sans  hover:bg-gray-300 transition-all ease-linear shadow-lg"
               onClick={openModal}
             >
               <AiOutlineUser />
