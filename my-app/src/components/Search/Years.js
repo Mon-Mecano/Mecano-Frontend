@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import cars from "../../assets/data/cars.json";
 import { Link, Navigate } from "react-router-dom";
@@ -6,10 +6,9 @@ import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 function Years() {
   const [year, setYear] = React.useState("");
+  const [make, setMake] = React.useState("");
+  const [model, setModel] = React.useState("");
 
-  function handleChange(e) {
-    setYear(e.target.value);
-  }
 
   return (
     <>
@@ -27,22 +26,50 @@ function Years() {
                 Choisi ton vehicule
               </h1>
             </div>
-            <div className="flex flex-col items-center w-full h-[80%] bg-white rounded-2xl border-solid border-gray-100 shadow-lg">
-              <input
-                list="vehicules"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 placeholder:text-lg placeholder:font-mono"
-                placeholder="Entrez l'annee du model du vehicule"
+            <div className="flex justify-between flex-col items-center w-full  bg-white rounded-2xl border-solid border-gray-100 shadow-lg">
+              <select
+                id="year"
+                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
                 required
-                onChange={handleChange}
-                value={year}
-              ></input>
-              <datalist id="vehicules">
+                onChange={(e) => {console.log(e.target.value);setYear(e.target.value);}}
+              >
+                <option disabled selected>
+                  Entrez l'annee du model du vehicule
+                </option>
                 {Object.entries(cars).map((year) => {
-                  return <option value={year[0]} />;
+                  return <option value={year[0]}> {year[0]} </option>;
                 })}
-              </datalist>
+              </select>
+
+              <select
+                id="make"
+                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
+                required
+                onChange={(e) => {console.log(e.target.value);setMake(e.target.value);}}
+              >
+              <option disabled selected>
+                Entrez la marque du vehicule
+              </option>
+              {year ? Object.entries(cars[year]).map((make) => {
+                return <option value={make[0]}> {make[0]}</option>;
+              }) : null}
+              </select>
+
+              <select
+                id="model"
+                className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
+                required
+                onChange={(e) => {console.log(e.target.value);setModel(e.target.value);}}
+              >
+              <option disabled selected>
+              Entrez votre vehicule model
+              </option>
+              {make ? Object.entries(cars[year][make]).map((model) => {
+                return <option value={model[1]}> {model[1]}</option>;
+              }) : null}
+              </select>
+              {model ? <Navigate to={`${year}/${make}/${model}/login`} />:null}
             </div>
-            {year !== "" ? <Navigate to={year} /> : null}
           </div>
         </div>
       </div>

@@ -44,7 +44,7 @@ function Login() {
           <div className="lg:w-1/2 md:w-3/4 sm:w-full">
             <div className="flex">
               <h1 className="font-mono font-bold text-3xl text-justify my-6">
-                <Link to="../.." relative="path">
+                <Link to="../../../.." relative="path">
                   <button className="bg-white rounded-3xl p-2 mr-2 shadow-lg">
                     <MdOutlineKeyboardBackspace />
                   </button>
@@ -52,15 +52,31 @@ function Login() {
                 Se connecter
               </h1>
             </div>
-            <div className="lg:flex justify-center w-full h-[45%] bg-white rounded-2xl border-solid border-gray-100 shadow-lg">
+            <div className=" relative flex justify-between flex-col items-center w-full  bg-white rounded-2xl border-solid border-gray-100 shadow-lg pl-10 pb-5">
               <div className="mr-3">
-                <h2 className="font-mono text-xl pr-40 mt-8 mb-4">
-                  Re-bienvenue sur Mon Mecano
-                </h2>
+                <div className="flex flex-row justify-between">
+                  <h2 className="font-mono text-xl pr-40 mt-8 mb-4">
+                    Re-bienvenue sur Mon Mecano
+                  </h2>
+                  <div
+                    tabindex="0"
+                    class="collapse collapse-arrow bg-gray-100 rounded-lg ml-16 my-10 h-min"
+                  >
+                    <input type="checkbox" />
+                    <div class="collapse-title font-mono text-lg font-bold bg-gray-200">
+                      Votre voiture
+                    </div>
+                    <div class="collapse-content">
+                      <p className="p-4 font-mono text-lg">
+                        {`${year} ${make} ${model}`}
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 <form onSubmit={sendUserLogin}>
                   <input
                     onChange={inputData}
-                    className="input"
+                    className="input text-gray-900 bg-gray-50 font-mono rounded-lg focus:outline-none shadow-lg"
                     type="email"
                     name="email"
                     value={userEmail}
@@ -71,7 +87,7 @@ function Login() {
                   <br></br>
                   <input
                     onChange={inputData}
-                    className="input"
+                    className="input  text-gray-900 bg-gray-50 font-mono rounded-lg focus:outline-none shadow-lg "
                     type="password"
                     name="password"
                     value={userPassword}
@@ -85,11 +101,11 @@ function Login() {
                       id="link-checkbox"
                       type="checkbox"
                       value="savePass"
-                      class="w-4 h-4 text-black bg-gray-100 rounded- border-gray-300 cursor-pointer"
+                      className="w-4 h-4 text-black bg-gray-100 rounded- border-gray-300 cursor-pointer"
                     />
                     <label
                       for="link-checkbox"
-                      class="ml-2 font-mono font-medium text-gray-900 dark:text-gray-300"
+                      className="ml-2 font-mono font-medium text-gray-900 dark:text-gray-300"
                     >
                       Se souvenir du mot de passe
                     </label>
@@ -104,20 +120,6 @@ function Login() {
                   </div>
                 </form>
               </div>
-              <div
-                tabindex="0"
-                class="collapse collapse-arrow bg-gray-100 rounded-lg ml-16 my-10 h-min"
-              >
-                <input type="checkbox" />
-                <div class="collapse-title font-mono text-lg font-bold bg-gray-200">
-                  Votre voiture
-                </div>
-                <div class="collapse-content">
-                  <p className="p-4 font-mono text-lg">
-                  {`${year} ${make} ${model}`}
-                  </p>
-                </div>  
-              </div>
             </div>
           </div>
         </div>
@@ -127,4 +129,3 @@ function Login() {
 }
 
 export default Login;
- 
