@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../Navbar/Navbar";
 import cars from "../../assets/data/cars.json";
 import { Link, Navigate } from "react-router-dom";
@@ -31,7 +31,7 @@ function Years() {
                 id="year"
                 className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
                 required
-                onChange={(e) => {console.log(e.target.value);setYear(e.target.value);}}
+                onChange={(e) => {setYear(e.target.value);}}
               >
                 <option disabled selected>
                   Entrez l'annee du model du vehicule
@@ -45,7 +45,7 @@ function Years() {
                 id="make"
                 className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
                 required
-                onChange={(e) => {console.log(e.target.value);setMake(e.target.value);}}
+                onChange={(e) => {setMake(e.target.value);}}
               >
               <option disabled selected>
                 Entrez la marque du vehicule
@@ -59,7 +59,7 @@ function Years() {
                 id="model"
                 className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-4 my-6 text-lg font-mono"
                 required
-                onChange={(e) => {console.log(e.target.value);setModel(e.target.value);}}
+                onChange={(e) => {setModel(e.target.value);}}
               >
               <option disabled selected>
               Entrez votre vehicule model
