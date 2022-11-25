@@ -12,6 +12,7 @@ import Years from "../Search/Years";
 import Makes from "../Search/Makes";
 import Models from "../Search/Models";
 import Login from "../Search/Login";
+import Dashboard from "../Dashboard/Dashboard.js";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/search/:year" element={<Makes />} />
           <Route path="/search/:year/:make" element={<Models />} />
           <Route path="/search/:year/:make/:model/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
     </>
