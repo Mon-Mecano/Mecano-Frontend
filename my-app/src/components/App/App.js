@@ -11,6 +11,7 @@ import MecanoSales from "../Mecano/MecanoSales";
 import Years from "../Search/Years";
 import Login from "../Search/Login";
 import Dashboard from "../Dashboard/Dashboard.js";
+import TaskTable from "../TaskTable/TaskTable";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/search" element={<Years />} />
           <Route path="/search/:year/:make/:model/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/taskTable" element={<TaskTable />} />
         </Routes>
       </BrowserRouter>
     </>
